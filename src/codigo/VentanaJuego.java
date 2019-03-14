@@ -26,6 +26,10 @@ public class VentanaJuego extends javax.swing.JFrame {
     //juego, yo tengo una pantalla que van pasando cosas que las naves se mueves x ej.
     
     BufferedImage buffer = null;
+    
+    //creo un objeto de tipo nave
+    Nave miNave = new Nave();
+    
     //el nuevo hilo de ejecucion es una nueva variable de tipo timer
     //cada 10 milisegundos va a llamar al codigo que esta ahi dentro
     Timer temporizador = new Timer(10, new ActionListener() {
@@ -52,6 +56,10 @@ public class VentanaJuego extends javax.swing.JFrame {
         //y dibujamos el buffer sobre el jpanel.
         
         temporizador.start();
+        
+        //inicializo la posicion inicial de la nave
+        miNave.x = ANCHOPANTALLA /2 - miNave.imagen.getWidth(this)/2;
+        miNave.y = ALTOPANTALLA - miNave.imagen.getHeight(this) - 40;
     }
     
     private void bucleDelJuego(){
@@ -66,7 +74,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         
         ////////////////////////////////////////////////////////////////////
         //redibujamos aqui cada elemento
-        
+        g2.drawImage(miNave.imagen, miNave.x, miNave.y, null);
         
         
         
