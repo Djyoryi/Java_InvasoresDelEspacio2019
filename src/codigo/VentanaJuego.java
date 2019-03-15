@@ -146,8 +146,10 @@ public class VentanaJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_formKeyPressed
 
     private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
-        miNave.setPulsadoDerecha(false);
-        miNave.setPulsadoIzquierda(false);
+        switch (evt.getKeyCode()){
+            case KeyEvent.VK_LEFT: miNave.setPulsadoIzquierda(false) ; break;
+            case KeyEvent.VK_RIGHT: miNave.setPulsadoDerecha(false); break;
+        }
     }//GEN-LAST:event_formKeyReleased
 
     /**
