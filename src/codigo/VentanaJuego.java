@@ -30,6 +30,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     
     //creo un objeto de tipo nave
     Nave miNave = new Nave();
+    Disparo miDisparo = new Disparo();
     
     //el nuevo hilo de ejecucion es una nueva variable de tipo timer
     //cada 10 milisegundos va a llamar al codigo que esta ahi dentro
@@ -76,7 +77,9 @@ public class VentanaJuego extends javax.swing.JFrame {
         ////////////////////////////////////////////////////////////////////
         //redibujamos aqui cada elemento
         g2.drawImage(miNave.imagen, miNave.x, miNave.y, null);
+        g2.drawImage(miDisparo.imagen, miDisparo.x, miDisparo.y, null);
         miNave.mueve();
+        miDisparo.mueve();
         
         
         
@@ -149,6 +152,8 @@ public class VentanaJuego extends javax.swing.JFrame {
         switch (evt.getKeyCode()){
             case KeyEvent.VK_LEFT: miNave.setPulsadoIzquierda(false) ; break;
             case KeyEvent.VK_RIGHT: miNave.setPulsadoDerecha(false); break;
+            case KeyEvent.VK_SPACE: miDisparo.x = miNave.x;
+                                    miDisparo.y = miNave.y; break;
         }
     }//GEN-LAST:event_formKeyReleased
 
