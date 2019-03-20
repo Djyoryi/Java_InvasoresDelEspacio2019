@@ -18,7 +18,8 @@ public class Disparo {
     //inicializamos las variables public, es public para que lo veamos desde la ventana del juego
     public Image imagen = null;
     public int x = 0;
-    public int y = 0;
+    public int y = 2000; //al principio el disparo se pinta muy por debajo de la pantalla
+    public boolean disparado = false;
     
     //constructor que inicializa el objeto que se llama igual que la clase y no devuleve nada (no es void ni boolean....)
     public Disparo(){
@@ -28,13 +29,15 @@ public class Disparo {
             //quitamos el logger porque no lo vamos a usar
         }
     }
-    public void mueve(){
-        
-        y--;
-        
+    public void mueve() {
+        if (disparado) {
+            y--;
+        }
+
     }
      public void posicionaDisparo(Nave _nave){
         x = _nave.x + _nave.imagen.getWidth(null)/2 - imagen.getWidth(null)/2;
         y = _nave.y - _nave.imagen.getHeight(null)/2;
+      
     }
 }
