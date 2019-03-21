@@ -157,24 +157,9 @@ public class VentanaJuego extends javax.swing.JFrame {
                 listaMarcianos[i][j].mueve();
                 //chequeo si el marciano ha chocado contra la pared para cambiar
                 //la direccion de todos los marcianos
-                if (listaMarcianos[i][j].x + anchoMarciano == ANCHOPANTALLA){
-                    cambiaDireccionMarcianos();
-                }
-                    if (listaMarcianos[i][j].x == 0){
-                        cambiaDireccionMarcianos();
-                        listaMarcianos[i][j].x = 2;
-                        
-                        
-                    
-                
-                   
-                        
-                        
-                   
-                
-                    
-                }
-                
+                if (listaMarcianos[i][j].x + anchoMarciano == ANCHOPANTALLA || listaMarcianos[i][j].x == 0){
+                   direccionMarcianos = true;
+                }         
                 if (contador < 50) {
                     _g2.drawImage(listaMarcianos[i][j].imagen1,
                             listaMarcianos[i][j].x,
@@ -188,6 +173,10 @@ public class VentanaJuego extends javax.swing.JFrame {
                 }
                 else contador = 0;
             }
+            }
+             if (direccionMarcianos){
+                cambiaDireccionMarcianos();
+                direccionMarcianos = false;
         }
     }
 
