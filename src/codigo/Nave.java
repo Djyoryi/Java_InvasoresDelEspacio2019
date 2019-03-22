@@ -24,11 +24,7 @@ public class Nave {
     
     //constructor que inicializa el objeto que se llama igual que la clase y no devuleve nada (no es void ni boolean....)
     public Nave(){
-        try {
-            imagen = ImageIO.read(getClass().getResource("/imagenes/nave.png"));
-        } catch (IOException ex) {
-            //quitamos el logger porque no lo vamos a usar
-        }
+        
     }
     
     public void mueve(){
