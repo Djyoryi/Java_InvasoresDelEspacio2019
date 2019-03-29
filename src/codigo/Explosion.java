@@ -10,7 +10,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 /**
  *
- * @author fecq8
+ * @author Fernando de Castro
  */
 public class Explosion {
     public Image imagenExplosion = null;   
